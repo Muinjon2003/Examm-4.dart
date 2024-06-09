@@ -6,7 +6,7 @@ class Person {
   Person({required this.name, required this.age});
 }
 
-Future<List<String>> getOlderThan(List<Person> people, int minAge) async {
+Future<List<String>> kalontarr(List<Person> people, int minAge) async {
   try {
     return people.where((person) => person.age > minAge).map((person) => person.name).toList();
   } catch (e) {
@@ -26,7 +26,7 @@ void main() async {
   int minAge = 25;
 
   try {
-    List<String> olderThanMinAge = await getOlderThan(people, minAge);
+    List<String> olderThanMinAge = await kalontarr(people, minAge);
     print('In odamho kalontarand  $minAge: $olderThanMinAge' );
   } catch (e) {
     print('Xatto: $e');
