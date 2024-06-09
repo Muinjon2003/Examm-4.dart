@@ -1,50 +1,50 @@
 
-class Product {
-  String _name;
-  double _price;
+class Mahsulot {
+  String _nom;
+  double _narx;
 
-  Product(this._name, this._price);
+  Mahsulot(this._nom, this._narx);
 
-  String get name => _name;
+  String get nom => _nom;
 
-  set name(String name) {
-    _name = name;
+  set nom(String nom) {
+    _nom = nom;
   }
 
-  double get price => _price;
+  double get narx => _narx;
 
-  set price(double price) {
-    if (price >= 0) {
-      _price = price;
+  set narx(double narx) {
+    if (narx >= 0) {
+      _narx = narx;
     } else {
-      print('Price cannot be negative.');
+      print('Narx pastshudash mumkinnest.');
     }
   }
 
   void display() {
-    print('Product Name: $_name, Price: \$${_price.toStringAsFixed(2)}');
+    print('Nimguii mahsulot: $_nom, Narx: \$${_narx.toStringAsFixed(2)}');
   }
 }
 
-List<Product> filterProducts(List<Product> products, bool Function(Product) condition) {
-  return products.where(condition).toList();
+List<Mahsulot> filterMahsulotho(List<Mahsulot> mahsulotho, bool Function(Mahsulot) condition) {
+  return mahsulotho.where(condition).toList();
 }
 
 void main() {
-  Product product1 = Product('Laptop', 1500.0);
-  Product product2 = Product('Smartphone', 800.0);
-  Product product3 = Product('Tablet', 300.0);
+  Mahsulot mahsulot1 = Mahsulot('hp', 7500);
+  Mahsulot mahsulot2 = Mahsulot('Redmi', 2000);
+  Mahsulot mahsulot3 = Mahsulot('Lenove', 50000);
 
-  product1.display();
-  product2.display();
-  product3.display();
+  mahsulot1.display();
+  mahsulot2.display();
+  mahsulot3.display();
 
-  List<Product> products = [product1, product2, product3];
+  List<Mahsulot> mahsulotho = [mahsulot1, mahsulot2, mahsulot3];
 
-  List<Product> expensiveProducts = filterProducts(products, (product) => product.price > 500);
+  List<Mahsulot> expensiveMahsulotho = filterMahsulotho(mahsulotho, (mahsulot) => mahsulot.narx > 500);
 
-  print('\nExpensive Products:');
-  for (var product in expensiveProducts) {
-    product.display();
+  print('\nExpensive Mahsulotho:');
+  for (var mahsulot in expensiveMahsulotho) {
+    mahsulot.display();
   }
 }
